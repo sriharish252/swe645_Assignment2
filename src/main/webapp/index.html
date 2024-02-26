@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- HTML file for the home/index page of the website -->
+<!-- Displays the "About" section and the provides a link to a Survey page -->
+<!-- Author: Sri Harish Jayaram -->
+
+<html>
+  <head>
+    <title>theSchoolHomepage</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+      }
+
+      .bgimg {
+        background-position: center;
+        background-size: cover;
+        background-image: url("JohnsonCenterAtDawn.jpg");
+        min-height: 75%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s4">
+          <a href="#" class="w3-button w3-block w3-black">HOME</a>
+        </div>
+        <div class="w3-col s4">
+          <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+        </div>
+        <div class="w3-col s4">
+          <a href="surveyForm.html" class="w3-button w3-block w3-black">SURVEY</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+      <div
+        class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small"
+      >
+        <span class="w3-tag">Open for all</span>
+      </div>
+      <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size: 90px"
+          >the<br />School</span
+        >
+      </div>
+      <div class="w3-display-bottomright w3-center w3-padding-large">
+        <span class="w3-text-white">Join Now!</span>
+      </div>
+    </header>
+
+    <div class="w3-sand w3-grayscale w3-large">
+      <!-- About Container -->
+      <div class="w3-container" id="about">
+        <div class="w3-content" style="max-width: 700px">
+          <h5 class="w3-center w3-padding-64">
+            <span class="w3-tag w3-wide">ABOUT THE SCHOOL</span>
+          </h5>
+          <p>
+            The School was founded in blabla by Mr. M in lorem ipsum dolor sit
+            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+          <div class="w3-panel w3-leftbar w3-light-grey">
+            <p>
+              <i
+                >"We came equals into this world, and equals shall we go out of
+                it.</i
+              >
+            </p>
+            <p>
+              American planter, politician, Founding Father, and delegate to the
+              U.S. Constitutional Convention of 1787: George Mason
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-container" id="feedback" style="padding-bottom: 32px">
+        <div class="w3-content" style="max-width: 700px">
+          <h5 class="w3-center w3-padding-48">
+            <span class="w3-tag w3-wide">LET US KNOW YOUR THOUGHTS</span>
+          </h5>
+          <p>Share your feedback, thoughts and opinions at the following link.</p>
+          <a href="surveyForm.html" class="w3-button w3-black" type="submit">
+            Provide Feedback/ Take Survey
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+      <p>
+        Created by
+        <a
+          href="https://www.linkedin.com/in/sri-harish/"
+          title="Sri Harish Jayaram"
+          target="_blank"
+          class="w3-hover-text-green"
+          >Sri Harish Jayaram</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
+
+<!-- Style Credits: https://www.w3schools.com/w3css/tryw3css_templates_cafe.htm -->

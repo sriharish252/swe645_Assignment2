@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- HTML file for the Survey Page -->
+<!-- Displays a feedback form for individuals to fill -->
+<!-- Also provides a link to the Homepage, the user can also press the "Cancel" button to go back to the Homepage -->
+<!-- Author: Sri Harish Jayaram -->
+
+<html>
+
+<head>
+  <title>theSchoolHomepage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("feedback.jpeg");
+      min-height: 75%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s6">
+        <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+      <div class="w3-col s6">
+        <a href="#feedback" class="w3-button w3-block w3-black">SURVEY</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+      <span class="w3-tag">Open for all</span>
+    </div>
+    <div class="w3-display-middle w3-center">
+      <span class="w3-text-white" style="font-size: 90px"></span>
+    </div>
+    <div class="w3-display-bottomright w3-center w3-padding-large">
+      <span class="w3-text-white">Tell Us!</span>
+    </div>
+  </header>
+
+  <div class="w3-sand w3-grayscale w3-large">
+    <div class="w3-container" id="feedback" style="padding-bottom: 32px">
+      <div class="w3-content" style="max-width: 700px">
+        <h5 class="w3-center w3-padding-48">
+          <span class="w3-tag w3-wide">Tell Us Your Feedback</span>
+        </h5>
+        <form id="surveyForm" action="#" target="_self" onsubmit="alert('Form Submitted!')">
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required
+              name="FirstName" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required
+              name="LastName" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Street Address" required
+              name="StreetAddress" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="City" required name="City" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="State" required name="State" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Zip" required name="Zip" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Telephone" required
+              name="Telephone" />
+          </p>
+          <p>
+            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email" />
+          </p>
+          <p>
+            <label>Date of Survey</label>
+            <input class="w3-input w3-padding-16 w3-border" type="date" required name="DateOfSurvey" />
+          </p>
+
+          <div class="w3-padding-16">
+            <label>What did you like about the campus?
+              <small>(Check all that apply)</small>
+            </label>
+            <br />
+            <label for="students">
+              <input type="checkbox" name="students"> Students
+              </input>
+            </label>
+            <label for="location">
+              <input type="checkbox" name="location"> Location
+              </input>
+            </label>
+            <label for="campus">
+              <input type="checkbox" name="inp"> Campus
+              </input>
+            </label>
+            <label for="atmosphere">
+              <input type="checkbox" name="atmosphere"> Atmosphere
+              </input>
+            </label>
+            <label for="dormRooms">
+              <input type="checkbox" name="dormRooms"> Dorm Rooms
+              </input>
+            </label>
+            <label for="sports">
+              <input type="checkbox" name="sports"> Sports
+              </input>
+            </label>
+          </div>
+
+          <div class="w3-padding-16">
+            <label>
+              How did you become interested in this university?
+            </label>
+            <br />
+            <input type="radio" id="Friends" name="interested"> Friends
+            </input>
+            <input type="radio" id="Television" name="interested"> Television
+            </input>
+            <input type="radio" id="Internet" name="interested"> Internet
+            </input>
+            <input type="radio" id="Other" name="interested"> Other
+            </input>
+          </div>
+
+
+          <div class="w3-padding-16">
+            <label for="likelihood">
+              What's your likelihood of recommending this school?
+            </label>
+            <select class="w3-input w3-padding-16 w3-border" name="likelihood" id="likelihood">
+              <option value="VeryLikely">Very Likely</option>
+              <option value="Likely">Likely</option>
+              <option value="Unlikely">Unlikely</option>
+            </select>
+          </div>
+
+          <div class="w3-padding-16">
+            <p>
+              Raffle: Enter 10 comma separated numbers ranging from 1 through 100:<br />
+              <small>
+                This information will be used to announce whether you win a free movie ticket.
+              </small>
+              <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Eg: 1,2,3,4,5,6,7,8,9,10"
+                name="Raffle" />
+            </p>
+          </div>
+
+          <div class="w3-padding-16">
+            <p>
+              Tell us something, anything.
+              <textarea class="w3-input w3-padding-16 w3-border" rows="4" cols="50" placeholder="Additional Comments"
+                name="AdditionalComments"></textarea>
+            </p>
+          </div>
+
+          <p>
+            <button class="w3-button w3-black" type="submit">Submit
+            </button>
+            <button class="w3-button w3-teal" type="reset">
+              RESET
+            </button>
+            <a class="w3-button w3-red" href="index.html">CANCEL</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+    <p>
+      Created by
+      <a href="https://www.linkedin.com/in/sri-harish/" title="Sri Harish Jayaram" target="_blank"
+        class="w3-hover-text-green">Sri Harish Jayaram</a>
+    </p>
+  </footer>
+</body>
+
+</html>
+
+<!-- Style Credits: https://www.w3schools.com/w3css/tryw3css_templates_cafe.htm -->
