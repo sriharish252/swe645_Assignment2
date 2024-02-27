@@ -13,20 +13,15 @@ pipeline{
         stage("Build Docker Image"){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                        sh 'docker login -u sriharishj -p ${dockerhubpwd}'
-                        sh 'docker build -t sriharishj/swe645_assignment2 .'
-                    }
+                    sh 'docker login -u sriharishj -p dockerPassword'
+                    sh 'docker build -t sriharishj/swe645_assignment2 .'
                 }
             }
         }
         stage("Push Image to DockerHub"){
             steps{
                 script{
-                     withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                        sh 'docker login -u sriharishj -p ${dockerhubpwd}'
-                        sh 'docker push sriharishj/swe645_assignment2:${BUILD_TIMESTAMP}'
-                    }
+                    sh 'docker push sriharishj/swe645_assignment2:${BUILD_TIMESTAMP}'
                 }
             }
         }
