@@ -13,7 +13,7 @@ pipeline{
         stage("Build Docker Image"){
             steps{
                 script{
-                    sh 'docker build -t sriharishj/swe645_assignment2:${BUILD_TIMESTAMP} .'
+                    sh 'docker build -t sriharishj/swe645_assignment2 .'
                 }
             }
         }
