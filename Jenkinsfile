@@ -13,7 +13,10 @@ pipeline{
         stage("Build Docker Image"){
             steps{
                 script{
-                    sh 'docker build -t sriharishj/swe645_assignment2:\'${BUILD_TIMESTAMP}\' .'
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                        sh 'docker login -u sriharishj -p ${dockerhubpwd}'
+                        sh 'docker build -t sriharishj/swe645_assignment2 .'
+                    }
                 }
             }
         }
