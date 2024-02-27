@@ -21,7 +21,7 @@ pipeline{
         stage("Push Image to DockerHub"){
             steps{
                 script{
-                    sh 'docker push sriharishj/swe645_assignment2:${BUILD_TIMESTAMP}'
+                    sh 'docker push sriharishj/swe645_assignment2'
                 }
             }
         }
