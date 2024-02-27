@@ -29,7 +29,7 @@ pipeline{
             steps{
                 script{
                     env.KUBECONFIG = '/home/ubuntu/.kube/config'
-                    sh("kubectl --kubeconfig=${env.KUBECONFIG} set image deployment/swe645 assignment2=sriharishj/swe645_assignment2:${BUILD_TIMESTAMP} -n default")
+                    sh("kubectl --kubeconfig=${env.KUBECONFIG} set image deployment/swe645 assignment2=sriharishj/swe645_assignment2 -n default")
                 }
             }
         }
