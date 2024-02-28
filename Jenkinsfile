@@ -15,7 +15,7 @@ pipeline{
                 script{
                     withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
                         sh 'docker login -u sriharishj -p $dockerhubpwd'
-                        sh 'docker build -t sriharishj/swe645_assignment2:$BUILD_TIMESTAMP .'
+                        sh 'docker build -t sriharishj/swe645_assignment2:${BUILD_TIMESTAMP} .'
                     }
                 }
             }
@@ -23,7 +23,7 @@ pipeline{
         stage("Push Image to DockerHub"){
             steps{
                 script{
-                    sh 'docker push sriharishj/swe645_assignment2:$BUILD_TIMESTAMP'
+                    sh 'docker push sriharishj/swe645_assignment2:${BUILD_TIMESTAMP}'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline{
             steps{
                 script{
                     env.KUBECONFIG = '/home/ubuntu/.kube/config'
-                    sh("kubectl --kubeconfig=${env.KUBECONFIG} set image deployment/assignment2 assignment2=sriharishj/swe645_assignment2:$BUILD_TIMESTAMP -n default")
+                    sh("kubectl --kubeconfig=${env.KUBECONFIG} set image deployment/assignment2 assignment2=sriharishj/swe645_assignment2:${BUILD_TIMESTAMP} -n default")
                 }
             }
         }
