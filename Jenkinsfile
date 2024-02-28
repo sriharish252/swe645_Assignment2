@@ -13,8 +13,10 @@ pipeline{
         stage("Build Docker Image"){
             steps{
                 script{
-                    sh 'docker login -u sriharishj -p dockerPassword'
-                    sh 'docker build -t sriharishj/swe645_assignment2 .'
+                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                        sh 'docker login -u sriharishj -p $dockerhubpwd'
+                        sh 'docker build -t sriharishj/swe645_assignment2 .'
+                    }
                 }
             }
         }
@@ -25,7 +27,7 @@ pipeline{
                 }
             }
         }
-        stage("Deploy to kubernetes"){
+        stage("Deploy to Kubernetes"){
             steps{
                 script{
                     env.KUBECONFIG = '/home/ubuntu/.kube/config'
