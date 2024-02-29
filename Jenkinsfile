@@ -1,15 +1,21 @@
+// SWE645 Assignment Jenkinsfile - Provides the build stages and commands for Jenkins pipeline
+// Author: Sri Harish Jayaram
 pipeline{
     agent any
     tools{
         maven 'Maven'
     }
     stages{
+
+        // Stage 1: Build Maven Project and generate WAR file
         stage("Build Maven Project"){
             steps{
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sriharish252/swe645_Assignment2']])
                 sh 'mvn clean install'
             }
         }
+
+        // Stage 2: Build Docker image using the credentials stored in Jenkins
         stage("Build Docker Image"){
             steps{
                 script{
@@ -20,6 +26,8 @@ pipeline{
                 }
             }
         }
+
+        // Stage 3: Push Docker image to DockerHub
         stage("Push Image to DockerHub"){
             steps{
                 script{
@@ -27,6 +35,8 @@ pipeline{
                 }
             }
         }
+
+        // Stage 4: Deploy docker image to Kubernetes, edit the env.KUBECONFIG path, deployment name, container name and image name as needed.
         stage("Deploy to Kubernetes"){
             steps{
                 script{
